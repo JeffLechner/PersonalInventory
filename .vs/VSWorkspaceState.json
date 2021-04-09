@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\account",
+    "\\account\\migrations",
+    "\\personalInventory",
+    "\\static",
+    "\\static\\css",
+    "\\templates",
+    "\\templates\\app",
+    "\\templates\\registration"
+  ],
+  "SelectedNode": "\\templates\\registration\\login.html",
+  "PreviewInSolutionExplorer": false
+}

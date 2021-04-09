@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a class=" float-right btn-sm">
+	<i></i>
+</a>
+
+<h1 class="text-center">{{ area.name }}</h1>
+<a href='/viewPlace/{{area.place.id}}' type="button" class="btn btn-grey">Back</a>
+<a type="button" class="btn btn-danger" href ="/deleteArea/{{area.id}}">Delete</a>
+<hr />
+
+<a type="button" class="btn btn-outline-success btn-floating float-right btn-sm" href ="/addContainer/{{area.id}}?r=/viewArea/{{area.id}}">
+	<i class="fa fa-plus"></i>
+</a>
+
+<section>
+	<h2 class="text-left">Containers</h2>
+	{% for containers in orderedContainers %}
+	  <div class="row">
+	    <div class="col-xl-12 col-sm-6 col-3 ">
+				<div class="card-deck" >
+					{%for container in containers%}
+						<div class="col-md" >
+							{%if container is not None %}
+							  <div class="view overlay">
+						      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/22.jpg"
+							      alt="Card image cap">
+							    <a href="#!">
+							      <div class="mask rgba-white-slight"></div>
+							    </a>
+							  </div>
+
+							  <div class="card-body">
+							    <h4 class="card-title">{{ container.name }}</h4>
+							    <a type="button" class="btn btn-light-blue btn-md" href ="/viewContainer/{{container.id}}">View</a>
+							  </div>
+							{%endif%}
+						</div>
+					{%endfor%}
+				</div>
+		  </div>
+		</div>
+	{%endfor%}
+</section>
+
+{% endblock content %}

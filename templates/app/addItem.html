@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Dashboard
+{% endblock %}
+
+{% block content %}
+<div class="container center">
+	<div class="card-block">
+		<div class="text-center" style="margin-bottom:32px;">
+	      <h3>Add Item</h3>
+	      <hr class="mt-2 mb-2">
+	  </div>
+
+	  <form method="post">
+	    {{ form.non_field_errors }}
+	    {% csrf_token %}
+	    <div class="md-form">
+	      {{ form.name.errors }}
+	      <input class="form-control" type="text" name="name" maxlength="100" required id="id_name">
+	      <label for="id_name">Name</label>
+	    </div>
+
+	    <div class="md-form">
+	      {{ form.value.errors }}
+	      <input class="form-control" type="number" name="value" min="0" required id="id_value">
+	      <label for="id_value">Value</label>
+	    </div>
+
+	    <div class="md-form">
+	      {{ form.category.errors }}
+	      <input class="form-control" type="text" name="category" maxlength="100" required id="id_category">
+	      <label for="id_category">Category</label>
+	    </div>
+
+
+	    <div class="md-form">
+	      {{ form.extraDetails.errors }}
+	      <input class="form-control" type="text" name="extraDetails" required="false" maxlength="200" id="id_extraDetails">
+	      <label for="id_extraDetails">Details</label>
+	    </div>
+
+	    <div class="text-center">
+	      <button type="submit" class="btn btn-deep-purple">Add</button>
+		    <a href='{{r}}' type="button" class="btn btn-grey">Cancel</a>
+	    </div>
+	  </form>
+	</div>
+</div>
+{% endblock content %}
